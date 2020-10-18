@@ -1,0 +1,88 @@
+
+本地操作
+1
+.创建一个文件夹 右键git bash
+若是找不到文件 则修改注册表 参考https://blog.csdn.net/gghhm/article/details/104422681
+
+2.添加仓库文件
+git config --global user.name 'dunirs'
+git config --global user.email '1662354630@qq.com'
+
+mkdir test 再创建一个文件夹
+cd test 进入
+
+git init 建仓
+touch xx.py 创建一个文件
+
+git status 查看状态
+
+git add xx.py 从工作区提交到暂存区
+
+git commit -m '描述' 从暂存区提交到仓库
+
+3、修改仓库
+先修改文件 vi
+git add xx.py 
+git commit -m ' '
+
+4、删除文件
+rm -rf xx.py  删除文件
+git rm xx.py 从git删除文件
+git commit -m ' ' 提交操作
+
+
+远程仓库
+
+
+
+在git clone 时出现错误
+git clone https://github.com/dunirs/hello-world.git
+Cloning into 'hello-world'...
+fatal: unable to access 'https://github.com/dunirs/hello-world.git/': error sett
+ing certificate verify locations:
+  CAfile: E:/Git/Git/mingw64/ssl/certs/ca-bundle.crt
+  CApath: none
+
+
+解决方法
+git config --global http.sslVerify false 目的是绕过ssl证书认证
+
+git push
+（1）创建文件
+（2）git add xx.py 提交到暂存区
+（3）git commit -m '描述'
+（4）git push
+
+
+
+github 个人站点：
+ 
+
+搭建步骤
+1.创建个人站点 ：新建仓库：dunirs.github.io
+2.在仓库下创建index.html
+
+
+
+
+
+
+在vscode上使用git
+1）在github网站上建立一个仓库
+2）在vscode创建一个对应的文件夹
+3）点击终端
+4）这个时候第一次push需要网址：
+
+$ git add --all  或者使用 git add .(所得的文件) | git add file.js(对用指定文件)
+$ git commit -m "提交信息"
+$ git remote add origin '远程仓库url'
+$ git push -u origin origin(对应远程分支名)
+
+
+
+然后下一次就不用那么麻烦了，直接：
+
+$ git add --all  | git add .(所得的文件) | git add file.js(对用指定文件)
+$ git commit -m "信息"
+$ git push
+
