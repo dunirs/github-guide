@@ -1,3 +1,4 @@
+先在github上建立一个仓库 然后git clone
 
 本地操作
 1
